@@ -1,5 +1,4 @@
 version = "1.0"
-name = "Unattended-upgrades configuration panel"
 
 [main]
 name = "Unattended-upgrades configuration"
