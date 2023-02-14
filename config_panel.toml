@@ -18,10 +18,11 @@ name = "Unattended-upgrades configuration"
         type = "boolean"
         default = true
 
-        [main.unattended_configuration.unattended_mail]
+        [main.unattended_configuration.unattended_mail.noupdate]
         ask = "Would you like to receive an email from Unattended-Upgrades?"
         choices = ["If an upgrade has been done", "Only if there was an error", "Never"]
         default = "If an upgrade has been done"
+        #bind = ":/etc/apticron/apticron.conf"
 
 
     [main.apticron_configuration]
@@ -31,6 +32,7 @@ name = "Unattended-upgrades configuration"
         ask = "Would you like to receive an email to inform which upgrades need to be done?"
         type = "boolean"
         default = true
+        bind = "NOTIFY_NEW:/etc/apticron/apticron.conf"
 
         [main.apticron_configuration.previous_apticron_hour]
         ask = "When do you want to receive this email ?"
